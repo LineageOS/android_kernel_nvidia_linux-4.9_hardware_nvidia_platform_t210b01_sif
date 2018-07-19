@@ -97,9 +97,14 @@
 		mmc-hs400-enhanced-strobe;
 		built-in;
 		power-off-rail;
-		status = "okay";
 		bus-width = <8>;
+		mmc-ddr-1_8v;
+		mmc-hs200-1_8v;
+		mmc-hs400-1_8v;
+		no-sdio;
+		no-sd;
 		non-removable;
+		status = "okay";
 	};
 
 	sdhci@700b0200 { /* SDMMC2 for Wifi */
@@ -111,9 +116,20 @@
 		status = "okay";
 	};
 
-	/* No SD Card for Sif */
 	sdhci@700b0000 { /* SDMMC1 for SD card */
-		status = "disabled";
+		default-drv-type = <1>;
+		mmc-ocr-mask = <0x0>;
+		cd-gpios = <&gpio TEGRA_GPIO(Z, 1) 0>;
+		sd-uhs-sdr104;
+		sd-uhs-sdr50;
+		sd-uhs-sdr25;
+		sd-uhs-sdr12;
+		mmc-ddr-1_8v;
+		mmc-hs200-1_8v;
+		nvidia,cd-wakeup-capable;
+		no-sdio;
+		no-mmc;
+		status = "okay";
 	};
 
 	chosen {
