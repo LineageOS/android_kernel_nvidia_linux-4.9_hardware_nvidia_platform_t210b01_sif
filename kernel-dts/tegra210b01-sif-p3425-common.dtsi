@@ -553,7 +553,6 @@
 		};
 		vi {
 			status = "okay";
-			avdd_dsi_csi-supply = <&max77620_gpio7>;
 		};
 	};
 
