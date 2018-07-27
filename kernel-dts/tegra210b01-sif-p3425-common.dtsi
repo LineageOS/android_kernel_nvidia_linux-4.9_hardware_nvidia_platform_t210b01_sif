@@ -229,10 +229,6 @@
 						status = "okay";
 						nvidia,function = "xusb";
 					};
-					usb2-2 {
-						status = "okay";
-						nvidia,function = "xusb";
-					};
 				};
 			};
 
@@ -272,18 +268,6 @@
 			usb2-0 {
 				status = "okay";
 				mode = "otg";
-			};
-			usb2-2 {
-				status = "okay";
-				mode = "host";
-			};
-			usb3-0 {
-				status = "okay";
-				nvidia,usb2-companion = <0>;
-			};
-			usb3-1 {
-				status = "okay";
-				nvidia,usb2-companion = <2>;
 			};
 		};
 	};
@@ -361,13 +345,10 @@
 
 	xusb@70090000 {
 		compatible = "nvidia,tegra210b01-xhci";
-		phys = <&{/xusb_padctl@7009f000/pads/usb2/lanes/usb2-0}>,
-			<&{/xusb_padctl@7009f000/pads/usb2/lanes/usb2-2}>,
-			<&{/xusb_padctl@7009f000/pads/pcie/lanes/pcie-5}>,
-			<&{/xusb_padctl@7009f000/pads/pcie/lanes/pcie-4}>;
-		phy-names = "usb2-0", "usb2-2", "usb3-0", "usb3-1";
+		phys = <&{/xusb_padctl@7009f000/pads/usb2/lanes/usb2-0}>;
+		phy-names = "usb2-0";
 		#extcon-cells = <1>;
-		status = "okay";
+		status = "disabled";
 		nvidia,pmc-wakeup =
 			<&tegra_pmc
 				PMC_WAKE_TYPE_EVENT 39 PMC_TRIGGER_TYPE_HIGH>,
@@ -383,9 +364,8 @@
 
 	xudc@700d0000 {
 		compatible = "nvidia,tegra210b01-xudc";
-		phys =	<&{/xusb_padctl@7009f000/pads/usb2/lanes/usb2-0}>,
-				<&{/xusb_padctl@7009f000/pads/pcie/lanes/pcie-5}>;
-		phy-names = "usb2", "usb3";
+		phys =	<&{/xusb_padctl@7009f000/pads/usb2/lanes/usb2-0}>;
+		phy-names = "usb2";
 		#extcon-cells = <1>;
 		status = "okay";
 		charger-detector = <&usb_cd>;
@@ -399,6 +379,13 @@
 		pinmux_default: common {
 			pz1 {
 				nvidia,pins = "pz1";
+				nvidia,function = "rsvd2";
+				nvidia,pull = <TEGRA_PIN_PULL_UP>;
+				nvidia,tristate = <TEGRA_PIN_ENABLE>;
+				nvidia,enable-input = <TEGRA_PIN_DISABLE>;
+			};
+			pz2 {
+				nvidia,pins = "pz2";
 				nvidia,function = "rsvd2";
 				nvidia,pull = <TEGRA_PIN_PULL_UP>;
 				nvidia,tristate = <TEGRA_PIN_ENABLE>;
