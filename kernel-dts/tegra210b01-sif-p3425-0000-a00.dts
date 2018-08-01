@@ -21,6 +21,7 @@
 #include "sif-platforms/tegra210b01-sif-pinmux-p3425-0000-a00.dtsi"
 #include "sif-platforms/tegra210b01-sif-power-tree-p3425-0000-a00.dtsi"
 #include "sif-platforms/tegra210b01-sif-extcon-p3425-0000-a00.dtsi"
+#include "sif-platforms/tegra210b01-sif-pcie.dtsi"
 
 / {
 	model = "sif";

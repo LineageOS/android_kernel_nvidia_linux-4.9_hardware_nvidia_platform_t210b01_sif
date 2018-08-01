@@ -20,6 +20,7 @@
 / {
 	pcie-controller@1003000 {
 		compatible = "nvidia,tegra210b01-pcie";
+		/delete-property/ iommus;
 		nvidia,wake-gpio = <&gpio TEGRA_GPIO(A, 2) 0>;
 		dvdd-pex-pll-supply = <&max77620_ldo1>;
 		l0-dvddio-pex-supply = <&max77620_ldo1>;
