@@ -50,7 +50,7 @@
 					regulator-name = "vdd-core";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_1>;
 					maxim,fps-power-up-period = <1>;
-					maxim,fps-power-down-period = <6>;
+					maxim,fps-power-down-period = <7>;
 					regulator-min-microvolt = <850000>;
 					regulator-max-microvolt = <850000>;
 					regulator-enable-ramp-delay = <146>;
@@ -98,8 +98,8 @@
 					regulator-ramp-delay-scale = <360>;
 				};
 
-				ldo0 {
-					regulator-name = "avdd-io-hdmi-dp";
+				ldo0 { /*LDO0 not user in sif */
+					regulator-name = "vdd-ldo0";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_NONE>;
 					maxim,fps-power-up-period = <0>;
 					maxim,fps-power-down-period = <7>;
@@ -109,6 +109,8 @@
 					regulator-disable-ramp-delay = <626>;
 					regulator-ramp-delay = <100000>;
 					regulator-ramp-delay-scale = <200>;
+					/delete-property/ regulator-boot-on;
+					/delete-property/ regulator-always-on;
 				};
 
 				ldo1 {
@@ -138,14 +140,12 @@
 				};
 
 				ldo3 {
-					regulator-name = "vdd-3v3-eth";
+					regulator-name = "avdd-io-hdmi-dp";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_NONE>;
 					maxim,fps-power-up-period = <0>;
 					maxim,fps-power-down-period = <7>;
-					regulator-min-microvolt = <3300000>;
-					regulator-max-microvolt = <3300000>;
-					regulator-always-on;
-					regulator-boot-on;
+					regulator-min-microvolt = <1000000>;
+					regulator-max-microvolt = <1000000>;
 					regulator-enable-ramp-delay = <50>;
 					regulator-disable-ramp-delay = <1110>;
 					regulator-ramp-delay = <100000>;
@@ -166,7 +166,7 @@
 					regulator-disable-active-discharge;
 				};
 
-				ldo5 {
+				ldo5 { /* not used in sif */
 					regulator-name = "vdd-ldo5";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_NONE>;
 					maxim,fps-power-up-period = <0>;
@@ -175,9 +175,11 @@
 					regulator-disable-ramp-delay = <640>;
 					regulator-ramp-delay = <100000>;
 					regulator-ramp-delay-scale = <200>;
+					/delete-property/ regulator-boot-on;
+					/delete-property/ regulator-always-on;
 				};
 
-				ldo6 {
+				ldo6 { /* not used in sif */
 					regulator-name = "vdd-ldo6";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_NONE>;
 					maxim,fps-power-up-period = <0>;
@@ -186,28 +188,34 @@
 					regulator-disable-ramp-delay = <674>;
 					regulator-ramp-delay = <100000>;
 					regulator-ramp-delay-scale = <200>;
+					/delete-property/ regulator-boot-on;
+					/delete-property/ regulator-always-on;
 				};
 
-				ldo7 {
+				ldo7 { /* not used in sif */
 					regulator-name = "vdd-ldo7";
-					maxim,active-fps-source = <MAX77620_FPS_SRC_1>;
+					maxim,active-fps-source = <MAX77620_FPS_SRC_NONE>;
 					maxim,fps-power-up-period = <3>;
 					maxim,fps-power-down-period = <4>;
 					regulator-enable-ramp-delay = <24>;
 					regulator-disable-ramp-delay = <2768>;
 					regulator-ramp-delay = <100000>;
 					regulator-ramp-delay-scale = <200>;
+					/delete-property/ regulator-boot-on;
+					/delete-property/ regulator-always-on;
 				};
 
-				ldo8 {
+				ldo8 { /* not used in sif */
 					regulator-name = "vdd-ldo8";
-					maxim,active-fps-source = <MAX77620_FPS_SRC_1>;
+					maxim,active-fps-source = <MAX77620_FPS_SRC_NONE>;
 					maxim,fps-power-up-period = <6>;
 					maxim,fps-power-down-period = <1>;
 					regulator-enable-ramp-delay = <22>;
 					regulator-disable-ramp-delay = <1160>;
 					regulator-ramp-delay = <100000>;
 					regulator-ramp-delay-scale = <200>;
+					/delete-property/ regulator-boot-on;
+					/delete-property/ regulator-always-on;
 				};
 			};
 		};
