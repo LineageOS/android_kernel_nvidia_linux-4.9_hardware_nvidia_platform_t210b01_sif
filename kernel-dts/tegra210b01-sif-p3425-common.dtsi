@@ -39,6 +39,31 @@
 #include "foster-platforms/tegra210-foster-powermon-p2530-0930-e01.dtsi"
 
 / {
+	firmware {
+		android {
+			compatible = "android,firmware";
+			first_stage_delay = "1";
+
+			fstab {
+				compatible = "android,fstab";
+				system {
+					compatible = "android,system";
+					dev = "/dev/block/platform/sdhci-tegra.3/by-name/APP";
+					type = "ext4";
+					mnt_flags = "ro,noatime";
+					fsmgr_flags = "wait,verify=/dev/block/platform/sdhci-tegra.3/by-name/MDA";
+				};
+				vendor {
+					compatible = "android,vendor";
+					dev = "/dev/block/platform/sdhci-tegra.3/by-name/vendor";
+					type = "ext4";
+					mnt_flags = "ro,noatime";
+					fsmgr_flags = "wait,verify=/dev/block/platform/sdhci-tegra.3/by-name/MDA";
+				};
+			};
+		};
+	};
+
 	usb_cd: usb_cd@7009f000 {
 		compatible = "nvidia,tegra210-usb-cd";
 		reg = <0x0 0x7009f000 0x0 0x1000>;
