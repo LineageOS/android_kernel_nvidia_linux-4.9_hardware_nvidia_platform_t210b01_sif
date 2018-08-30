@@ -291,6 +291,12 @@
 		dvdd_pex_pll-supply = <&max77620_ldo1>;
 		hvddio_pex-supply = <&max77620_sd3>;
 		dvddio_pex-supply = <&max77620_ldo1>;
+
+		ports {
+			usb2-0 {
+				vbus-supply = <&battery_reg>;
+			};
+		};
 	};
 
 	pinctrl@7009f000 {
