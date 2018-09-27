@@ -750,6 +750,11 @@
 		sdhci-host = <&sdmmc2>;
 		pwr-retry-cnt = <5>;
 		builtin-roam-disabled;
+		fw_path = "/vendor/firmware/fw_bcmdhd_4356.bin";
+		nv_path = "/vendor/firmware/nvram_darcy_a00.txt";
+		tuned_nv_path = "/vendor/firmware/nvram_darcy_a00.txt";
+		clm_blob_path = "/system/etc/wifi/bcmdhd_clm_sif.blob";
+
 		country_code_map {
 			CC_XV {
 				iso_abbrev = "XV";
