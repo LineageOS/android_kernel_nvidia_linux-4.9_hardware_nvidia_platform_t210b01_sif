@@ -8,6 +8,7 @@ dts-include += platform/t210b01/ers/kernel-dts
 dts-include += $(makefile-path)
 
 dtb-$(CONFIG_ARCH_TEGRA_210_SOC) += tegra210b01-sif-p3425-0000-a00.dtb
+dtb-$(CONFIG_ARCH_TEGRA_210_SOC) += tegra210b01-sif-p3425-0500-a01.dtb
 
 ifneq ($(dtb-y),)
 dtb-y := $(addprefix $(makefile-path)/,$(dtb-y))
