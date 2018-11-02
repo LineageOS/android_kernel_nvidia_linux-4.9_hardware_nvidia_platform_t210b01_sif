@@ -187,6 +187,12 @@
 		status = "disabled";
 	};
 
+	efuse@7000f800 {
+		efuse-burn {
+			nvidia,redundant-aid-war;
+		};
+	};
+
 	aconnect@702c0000 {
 		ahub {
 			i2s@702d1100 {
