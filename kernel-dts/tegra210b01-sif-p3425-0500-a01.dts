@@ -43,4 +43,8 @@
 	cpuidle {
 		cc3-no-hvc;
 	};
+
+	pmc-iopower {
+		/delete-property/ iopower-sdmmc3-supply;
+	};
 };
