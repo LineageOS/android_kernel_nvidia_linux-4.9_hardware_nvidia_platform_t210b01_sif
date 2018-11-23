@@ -656,6 +656,18 @@
 		throttle@oc1 {
 			status = "disabled";
 		};
+		throttle-cfgs {
+			throttle_oc1: oc1 {
+				nvidia,priority = <50>;
+				nvidia,polarity-active-low = <1>;
+				nvidia,count-threshold = <100>;
+				nvidia,alarm-filter = <5100000>;
+				nvidia,alarm-period = <0>;
+				nvidia,cpu-throt-percent = <75>;
+				nvidia,gpu-throt-level =
+					<TEGRA_SOCTHERM_THROT_LEVEL_MED>;
+			};
+		};
 	};
 
 	sound_card: sound {
