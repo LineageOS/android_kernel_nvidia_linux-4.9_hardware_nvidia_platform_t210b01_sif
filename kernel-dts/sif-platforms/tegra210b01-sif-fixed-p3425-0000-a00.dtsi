@@ -74,31 +74,9 @@
 			vin-supply = <&vdd_3v3_sys>;
 		};
 
-		vdd_3v3_slp: regulator@5 {
+		vdd_hdmi: regulator@5 {
 			compatible = "regulator-fixed-sync";
 			reg = <5>;
-			regulator-name = "vdd-3v3-slp";
-			regulator-min-microvolt = <3300000>;
-			regulator-max-microvolt = <3300000>;
-			vin-supply = <&vdd_3v3_sys>;
-		};
-
-		vdd_fan: regulator@6 {
-			compatible = "regulator-fixed-sync";
-			reg = <6>;
-			regulator-name = "vdd-fan";
-			regulator-min-microvolt = <5000000>;
-			regulator-max-microvolt = <5000000>;
-			gpio = <&gpio TEGRA_GPIO(E, 4) 0>;
-			enable-active-high;
-			vin-supply = <&vdd_5v0_sys>;
-			regulator-enable-ramp-delay = <284>;
-			regulator-disable-ramp-delay = <6200>;
-		};
-
-		vdd_hdmi: regulator@7 {
-			compatible = "regulator-fixed-sync";
-			reg = <7>;
 			regulator-name = "vdd-hdmi";
 			regulator-min-microvolt = <5000000>;
 			regulator-max-microvolt = <5000000>;
