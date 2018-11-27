@@ -338,7 +338,7 @@
 	};
 
 	pwm-fan {
-		vdd-fan-supply = <&vdd_fan>;
+		vdd-fan-supply = <&vdd_5v0_sys>;
 	};
 
 	pmc-iopower {
