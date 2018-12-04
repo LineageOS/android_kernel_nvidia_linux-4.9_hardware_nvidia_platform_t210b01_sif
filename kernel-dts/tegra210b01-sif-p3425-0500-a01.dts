@@ -47,4 +47,22 @@
 	pmc-iopower {
 		/delete-property/ iopower-sdmmc3-supply;
 	};
+
+	thermal-zones {
+		Tboard_tegra {
+			status = "disabled";
+		};
+
+		Tdiode_tegra {
+			status = "disabled";
+		};
+	};
+
+	i2c@7000c000 {
+		status = "disabled";
+		tegra_nct72: temp-sensor@4c {
+			status = "disabled";
+		};
+	};
+
 };
