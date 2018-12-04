@@ -160,6 +160,7 @@
 			ui-timeout-ms {
 				yellow-state = <7000>;
 				red-state = <10000>;
+				red-state-eio = <10000>;
 				orange-state = <10000>;
 			};
 		};
