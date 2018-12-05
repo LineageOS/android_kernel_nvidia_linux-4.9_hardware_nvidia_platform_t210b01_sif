@@ -736,17 +736,17 @@
 		ina3221x: ina3221x@40 {
 			channel@0 {
 				reg = <0x0>;
-				ti,rail-name = "VDD_NOOP";
+				ti,rail-name = "VDD_NOOP1";
 				ti,shunt-resistor-mohm = <5>;
 			};
 			channel@1 {
 				reg = <0x1>;
-				ti,rail-name = "VDD_IO";
+				ti,rail-name = "VDD_5V0_SYS";
 				ti,shunt-resistor-mohm = <5>;
 			};
 			channel@2 {
 				reg = <0x2>;
-				ti,rail-name = "VDD_SYS";
+				ti,rail-name = "VDD_NOOP2";
 				ti,shunt-resistor-mohm = <5>;
 			};
 		};
