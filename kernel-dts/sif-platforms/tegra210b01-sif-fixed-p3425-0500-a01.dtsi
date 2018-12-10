@@ -25,15 +25,6 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
-		battery_reg: regulator@0 {
-			compatible = "regulator-fixed";
-			reg = <0>;
-			regulator-name = "vdd-ac-bat";
-			regulator-min-microvolt = <5000000>;
-			regulator-max-microvolt = <5000000>;
-			regulator-always-on;
-		};
-
 		vdd_5v0_sys: regulator@1 { /* DC 5V INPUT */
 			compatible = "regulator-fixed-sync";
 			reg = <1>;
@@ -71,7 +62,6 @@
 			regulator-max-microvolt = <5000000>;
 			gpio = <&gpio TEGRA_GPIO(CC, 7) 0>;
 			enable-active-high;
-			vin-supply = <&vdd_5v0_sys>;
 		};
 	};
 };

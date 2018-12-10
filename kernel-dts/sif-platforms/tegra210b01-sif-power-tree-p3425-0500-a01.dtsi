@@ -51,8 +51,8 @@
 					maxim,active-fps-source = <MAX77620_FPS_SRC_1>;
 					maxim,fps-power-up-period = <1>;
 					maxim,fps-power-down-period = <7>;
-					regulator-min-microvolt = <850000>;
-					regulator-max-microvolt = <850000>;
+					regulator-min-microvolt = <1050000>;
+					regulator-max-microvolt = <1050000>;
 					regulator-enable-ramp-delay = <146>;
 					regulator-disable-ramp-delay = <4080>;
 					regulator-ramp-delay = <27500>;
@@ -250,7 +250,7 @@
 	};
 
 	i2c@546c0000 {
-		bus-pullup-supply = <&battery_reg>;
+		bus-pullup-supply = <&vdd_5v0_sys>;
 	};
 
 	efuse@7000f800 {
@@ -260,7 +260,7 @@
 	host1x {
 		/* tegradc.0 */
 		dc@54200000 {
-			avdd_hdmi-supply = <&max77620_ldo8>;
+			avdd_hdmi-supply = <&max77620_ldo3>;
 			avdd_hdmi_pll-supply = <&max77620_sd3>;
 			vdd_hdmi_5v0-supply = <&vdd_hdmi>;
 		};
@@ -294,7 +294,7 @@
 
 		ports {
 			usb2-0 {
-				vbus-supply = <&battery_reg>;
+				vbus-supply = <&vdd_5v0_sys>;
 			};
 		};
 	};
@@ -323,7 +323,7 @@
 	};
 
 	bluedroid_pm {
-		avdd-supply = <&battery_reg>;
+		avdd-supply = <&vdd_5v0_sys>;
 		dvdd-supply = <&max77620_sd3>;
 	};
 
