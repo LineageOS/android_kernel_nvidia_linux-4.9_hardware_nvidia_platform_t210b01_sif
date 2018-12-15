@@ -640,18 +640,6 @@
 		disable-on-recovery-kernel;
 	};
 
-	pwm-leds {
-		compatible = "pwm-leds";
-		lightbar {
-			label = "led_lightbar";
-			pwms = <&tegra_pwm 0 40161>;
-			gpios = <&gpio TEGRA_GPIO(V, 0) GPIO_ACTIVE_LOW>;
-			max-brightness = <255>;
-			default-brightness = <255>;
-			linux,default-trigger = "default-on";
-		};
-	};
-
 	soctherm@0x700E2000 {
 		status = "okay";
 		throttle@oc1 {
