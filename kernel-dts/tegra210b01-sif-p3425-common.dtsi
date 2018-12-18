@@ -37,6 +37,7 @@
 #include "sif-platforms/tegra210b01-sif-cpufreq.dtsi"
 #include "sif-platforms/tegra210b01-sif-power-dvfs.dtsi"
 #include "foster-platforms/tegra210-foster-powermon-p2530-0930-e01.dtsi"
+#include "sif-platforms/tegra210b01-sif-p3425-a01-padvoltage-default.dtsi"
 
 / {
 	firmware {
