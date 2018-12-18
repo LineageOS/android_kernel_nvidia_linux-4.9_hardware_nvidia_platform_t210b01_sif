@@ -63,20 +63,9 @@
 			vin-supply = <&vdd_3v3_sys>;
 		};
 
-		vdd_3v3_sd: regulator@4 {
+		vdd_hdmi: regulator@4 {
 			compatible = "regulator-fixed-sync";
 			reg = <4>;
-			regulator-name = "vdd-3v3-sd";
-			regulator-min-microvolt = <3300000>;
-			regulator-max-microvolt = <3300000>;
-			gpio = <&gpio TEGRA_GPIO(Z, 4) 0>;
-			enable-active-high;
-			vin-supply = <&vdd_3v3_sys>;
-		};
-
-		vdd_hdmi: regulator@5 {
-			compatible = "regulator-fixed-sync";
-			reg = <5>;
 			regulator-name = "vdd-hdmi";
 			regulator-min-microvolt = <5000000>;
 			regulator-max-microvolt = <5000000>;
