@@ -1005,4 +1005,9 @@
 	i2c@7000d100 {
 		status = "disabled";
 	};
+
+	rtc {
+		nvidia,pmc-wakeup = <&tegra_pmc PMC_WAKE_TYPE_EVENT 16
+				     PMC_TRIGGER_TYPE_HIGH>;
+	};
 };
