@@ -157,6 +157,7 @@
 		bootargs = "earlycon=uart8250,mmio32,0x70006000,androidboot.secureos=tlk";
 		stdout-path = &uarta;
 		nvidia,tegra-darcy-sku;
+		nvidia,tegra-sif-sku;
 		no-tnid-sn;
 		nvidia,bootloader-xusb-enable;
 		nvidia,bootloader-vbus-enable=<0x1>;
