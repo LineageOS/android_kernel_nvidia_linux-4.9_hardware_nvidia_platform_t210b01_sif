@@ -759,6 +759,11 @@
 		};
 	};
 
+	bluedroid_pm {
+		nvidia,pmc-wakeup = <&tegra_pmc
+			PMC_WAKE_TYPE_EVENT 52 PMC_TRIGGER_TYPE_HIGH>;
+	};
+
 	bcm4356: brcmfmac_pcie_wlan {
 		compatible = "brcm,android-fmac";
 		interrupt-parent = <&gpio>;
