@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, NVIDIA CORPORATION.  All rights reserved.
+ * Copyright (c) 2018-2019, NVIDIA CORPORATION.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -36,8 +36,8 @@
 
 				pin_gpio3 {
 					maxim,active-fps-source = <MAX77620_FPS_SRC_0>;
-					maxim,fps-power-up-period = <4>;
-					maxim,fps-power-down-period = <4>;
+					maxim,active-fps-power-up-slot = <4>;
+					maxim,active-fps-power-down-slot = <4>;
 				};
 			};
 
@@ -49,8 +49,8 @@
 				sd0 {
 					regulator-name = "vdd-core";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_1>;
-					maxim,fps-power-up-period = <1>;
-					maxim,fps-power-down-period = <7>;
+					maxim,active-fps-power-up-slot = <1>;
+					maxim,active-fps-power-down-slot = <7>;
 					regulator-min-microvolt = <850000>;
 					regulator-max-microvolt = <850000>;
 					regulator-enable-ramp-delay = <146>;
@@ -62,8 +62,8 @@
 				sd1 {
 					regulator-name = "vdd-ddr-1v1";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_0>;
-					maxim,fps-power-up-period = <5>;
-					maxim,fps-power-down-period = <2>;
+					maxim,active-fps-power-up-slot = <5>;
+					maxim,active-fps-power-down-slot = <2>;
 					regulator-min-microvolt = <1100000>;
 					regulator-max-microvolt = <1100000>;
 					regulator-enable-ramp-delay = <130>;
@@ -75,8 +75,8 @@
 				sd2 {
 					regulator-name = "vdd-pre-reg-1v35";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_1>;
-					maxim,fps-power-up-period = <2>;
-					maxim,fps-power-down-period = <5>;
+					maxim,active-fps-power-up-slot = <2>;
+					maxim,active-fps-power-down-slot = <5>;
 					regulator-min-microvolt = <1350000>;
 					regulator-max-microvolt = <1350000>;
 					regulator-enable-ramp-delay = <176>;
@@ -88,8 +88,8 @@
 				sd3 {
 					regulator-name = "vdd-1v8";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_0>;
-					maxim,fps-power-up-period = <3>;
-					maxim,fps-power-down-period = <4>;
+					maxim,active-fps-power-up-slot = <3>;
+					maxim,active-fps-power-down-slot = <4>;
 					regulator-min-microvolt = <1800000>;
 					regulator-max-microvolt = <1800000>;
 					regulator-enable-ramp-delay = <242>;
@@ -101,8 +101,8 @@
 				ldo0 { /*LDO0 not user in sif */
 					regulator-name = "vdd-ldo0";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_NONE>;
-					maxim,fps-power-up-period = <0>;
-					maxim,fps-power-down-period = <7>;
+					maxim,active-fps-power-up-slot = <0>;
+					maxim,active-fps-power-down-slot = <7>;
 					regulator-min-microvolt = <1000000>;
 					regulator-max-microvolt = <1000000>;
 					regulator-enable-ramp-delay = <26>;
@@ -116,8 +116,8 @@
 				ldo1 {
 					regulator-name = "vdd-pex";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_NONE>;
-					maxim,fps-power-up-period = <0>;
-					maxim,fps-power-down-period = <7>;
+					maxim,active-fps-power-up-slot = <0>;
+					maxim,active-fps-power-down-slot = <7>;
 					regulator-min-microvolt = <1000000>;
 					regulator-max-microvolt = <1000000>;
 					regulator-enable-ramp-delay = <22>;
@@ -129,8 +129,8 @@
 				ldo2 {
 					regulator-name = "vddio-sdmmc-ap";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_NONE>;
-					maxim,fps-power-up-period = <0>;
-					maxim,fps-power-down-period = <7>;
+					maxim,active-fps-power-up-slot = <0>;
+					maxim,active-fps-power-down-slot = <7>;
 					regulator-min-microvolt = <1800000>;
 					regulator-max-microvolt = <3300000>;
 					regulator-enable-ramp-delay = <62>;
@@ -142,8 +142,8 @@
 				ldo3 {
 					regulator-name = "avdd-io-hdmi-dp";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_NONE>;
-					maxim,fps-power-up-period = <0>;
-					maxim,fps-power-down-period = <7>;
+					maxim,active-fps-power-up-slot = <0>;
+					maxim,active-fps-power-down-slot = <7>;
 					regulator-min-microvolt = <1000000>;
 					regulator-max-microvolt = <1000000>;
 					regulator-enable-ramp-delay = <50>;
@@ -155,8 +155,8 @@
 				ldo4 {
 					regulator-name = "vdd-rtc";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_0>;
-					maxim,fps-power-up-period = <1>;
-					maxim,fps-power-down-period = <6>;
+					maxim,active-fps-power-up-slot = <1>;
+					maxim,active-fps-power-down-slot = <6>;
 					regulator-min-microvolt = <800000>;
 					regulator-max-microvolt = <800000>;
 					regulator-enable-ramp-delay = <22>;
@@ -169,8 +169,8 @@
 				ldo5 { /* not used in sif */
 					regulator-name = "vdd-ldo5";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_NONE>;
-					maxim,fps-power-up-period = <0>;
-					maxim,fps-power-down-period = <7>;
+					maxim,active-fps-power-up-slot = <0>;
+					maxim,active-fps-power-down-slot = <7>;
 					regulator-enable-ramp-delay = <62>;
 					regulator-disable-ramp-delay = <640>;
 					regulator-ramp-delay = <100000>;
@@ -182,8 +182,8 @@
 				ldo6 { /* not used in sif */
 					regulator-name = "vdd-ldo6";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_NONE>;
-					maxim,fps-power-up-period = <0>;
-					maxim,fps-power-down-period = <7>;
+					maxim,active-fps-power-up-slot = <0>;
+					maxim,active-fps-power-down-slot = <7>;
 					regulator-enable-ramp-delay = <36>;
 					regulator-disable-ramp-delay = <674>;
 					regulator-ramp-delay = <100000>;
@@ -195,8 +195,8 @@
 				ldo7 { /* not used in sif */
 					regulator-name = "vdd-ldo7";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_NONE>;
-					maxim,fps-power-up-period = <3>;
-					maxim,fps-power-down-period = <4>;
+					maxim,active-fps-power-up-slot = <3>;
+					maxim,active-fps-power-down-slot = <4>;
 					regulator-enable-ramp-delay = <24>;
 					regulator-disable-ramp-delay = <2768>;
 					regulator-ramp-delay = <100000>;
@@ -208,8 +208,8 @@
 				ldo8 { /* not used in sif */
 					regulator-name = "vdd-ldo8";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_NONE>;
-					maxim,fps-power-up-period = <6>;
-					maxim,fps-power-down-period = <1>;
+					maxim,active-fps-power-up-slot = <6>;
+					maxim,active-fps-power-down-slot = <1>;
 					regulator-enable-ramp-delay = <22>;
 					regulator-disable-ramp-delay = <1160>;
 					regulator-ramp-delay = <100000>;
