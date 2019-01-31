@@ -157,6 +157,7 @@
 		nvidia,fastboot_without_usb;
 		nvidia,gpu-disable-power-saving;
 		verified-boot {
+			poweroff-on-red-state;
 			ui-timeout-ms {
 				yellow-state = <7000>;
 				red-state = <10000>;
