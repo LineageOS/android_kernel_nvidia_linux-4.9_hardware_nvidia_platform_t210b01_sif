@@ -18,7 +18,7 @@
  *
  */
 / {
-	pcie-controller@1003000 {
+	pcie@1003000 {
 		compatible = "nvidia,tegra210b01-pcie";
 		/delete-property/ iommus;
 		/delete-property/ iommu-map;
