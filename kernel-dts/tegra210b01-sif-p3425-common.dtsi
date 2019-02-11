@@ -104,7 +104,7 @@
 		nvidia,restrict-voltage-switch;
 		pinctrl_iopad_default:iopad-defaults {
 			sdmmc-io-pads {
-				pins = "sdmmc1", "sdmmc3";
+				pins = "sdmmc1";
 				nvidia,enable-voltage-switching;
 			};
 			sdmmc-dpd-enable {
@@ -126,15 +126,6 @@
 		no-sdio;
 		no-sd;
 		non-removable;
-		status = "okay";
-	};
-
-	sdhci@700b0200 { /* SDMMC2 for Wifi */
-		mmc-ocr-mask = <0x8>;
-		uhs-mask = <0x8>;
-		max-clk-limit = <200000000>;
-		power-off-rail;
-		force-non-removable-rescan;
 		status = "okay";
 	};
 
