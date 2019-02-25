@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018 NVIDIA CORPORATION. All rights reserved.
+ * Copyright (c) 2018-2019 NVIDIA CORPORATION. All rights reserved.
  *
  * This software is licensed under the terms of the GNU General Public
  * License version 2, as published by the Free Software Foundation, and
@@ -37,6 +37,7 @@
 			1785000
 			1887000
 			1963500
+			2014500
 			>;
 		preserve-across-suspend;
 		};
