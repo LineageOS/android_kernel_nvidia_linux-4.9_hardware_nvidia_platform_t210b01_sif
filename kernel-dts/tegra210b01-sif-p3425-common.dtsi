@@ -599,11 +599,13 @@
 			<&tegra_car TEGRA210_CLK_EXTERN1>;
 		assigned-clock-rates = <368640000>, <36864000>,
 			<36864000>, <12288000>;
-		nvidia,num-codec-link = <1>;
+		nvidia,num-codec-link = <2>;
 
 		nvidia,audio-routing =
 			"y Headphone", 	"y OUT",
-			"y IN",		"y Mic";
+			"y IN",		"y Mic",
+			"x Headphone",	"x OUT",
+			"x IN",		"x Mic";
 
 		nvidia,xbar = <&tegra_axbar>;
 
@@ -628,6 +630,25 @@
 			num-channel = <1>;
 			ignore_suspend;
 			name-prefix = "y";
+		};
+
+		nvidia,dai-link-2 {
+			link-name = "spdif-dit-1";
+			cpu-dai = <&tegra_i2s1>;
+			codec-dai = <&spdif_dit1>;
+			cpu-dai-name = "I2S1";
+			codec-dai-name = "dit-hifi";
+			format = "i2s";
+			bitclock-slave;
+			frame-slave;
+			bitclock-inversion;
+			frame-noninversion;
+			bit-format = "s16_le";
+			bclk_ratio = <1>;
+			srate = <48000>;
+			num-channel = <2>;
+			ignore_suspend;
+			name-prefix = "x";
 		};
 	};
 
