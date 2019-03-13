@@ -26,6 +26,18 @@
 		status = "okay";
 		pwms = <&tegra_pwm 3 65536>;
 		shared_data = <&pwm_fan_shared_data>;
-		active_pwm = <0 27000 32400 37200 42700 42700 42700 42700 42700 42700>;
+		profiles {
+			default = "quiet";
+			quiet {
+				state_cap = <5>;
+				active_pwm = <0 17000 22000 26400 32000
+						40160 62720 64000 64512 65535>;
+			};
+			cool {
+				state_cap = <5>;
+				active_pwm = <0 16640 26400 32000 32000
+						40160 62720 64000 64512 65535>;
+			};
+		};
 	};
 };
