@@ -20,7 +20,7 @@
 		polling_period = <1100>;
 		ndevs = <1>;
 		cdev_type = "pwm-fan";
-		tzp_governor_name = "pid_thermal_gov";
+		tzp_governor_name = "continuous_therm_gov";
 
 		dev1 {
 			dev_data = "CPU-therm";
@@ -35,19 +35,28 @@
 		num_resources = <0>;
 		shared_data = <&thermal_fan_est_shared_data>;
 		trip_length = <10>;
+		thermal-zone-params {
+			governor-name = "continuous_therm_gov";
+			iir_power = <7>;
+			iir_min = <10>;
+			iir_max = <1000>;
+			iir_gain_qp = <1000>;
+			iir_upper_width = <5000>;
+			iir_lower_width = <15000>;
+		};
 		profiles {
 			default = "quiet";
 			quiet {
-				active_trip_temps = <0 75000 77000 79000 81000
-					83000 150000 160000 170000 180000>;
-				active_hysteresis = <0 40000 12000 10000 10000
-					9000 0 0 0 0>;
+				active_trip_temps = <0 70000 60000 74000 84000
+					140000 150000 160000 170000 180000>;
+				active_hysteresis = <0 32000 0 0 0
+					0 0 0 0 0>;
 			};
 			cool {
-				active_trip_temps = <0 65000 67000 69000 71000
-					73000 150000 160000 170000 180000>;
-				active_hysteresis = <0 35000 10000 9000 9000
-					9000 0 0 0 0>;
+				active_trip_temps = <0 65000 55000 65000 80000
+					140000 150000 160000 170000 180000>;
+				active_hysteresis = <0 27000 0 0 0
+					0 0 0 0 0>;
 			};
 		};
 	};
