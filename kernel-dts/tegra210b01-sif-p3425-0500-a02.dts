@@ -1,0 +1,74 @@
+/*
+ * tegra210b01-sif-p3425-0500-a02.dts
+ *
+ * Copyright (c) 2019, NVIDIA CORPORATION.  All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; version 2 of the License.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU General Public License along
+ * with this program; if not, write to the Free Software Foundation, Inc.,
+ * 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+ *
+ */
+#include "tegra210b01-sif-p3425-common.dtsi"
+#include "sif-platforms/tegra210b01-sif-pinmux-p3425-0000-a01.dtsi"
+#include "sif-platforms/tegra210b01-sif-power-tree-p3425-0500-a01.dtsi"
+#include "sif-platforms/tegra210b01-sif-extcon-p3425-0000-a00.dtsi"
+#include "sif-platforms/tegra210b01-sif-pcie.dtsi"
+
+/ {
+	model = "sif";
+	compatible = "nvidia,sif", "nvidia,tegra210b01";
+	nvidia,dtsfilename = __FILE__;
+	nvidia,dtbbuildtime = __DATE__, __TIME__;
+
+	firmware {
+		android {
+			compatible = "android,firmware";
+			hardware = "sif";
+		};
+	};
+
+	rollback-protection {
+		device-name = "sdmmc";
+		device-method = <0x1 0x00000002>; /* type (0x1 = ioctl), argument */
+		status = "okay";
+	};
+
+	chosen {
+		nvidia,tegra-joint_xpu_rail;
+	};
+
+	cpuidle {
+		cc3-no-hvc;
+	};
+
+	pmc-iopower {
+		/delete-property/ iopower-sdmmc3-supply;
+	};
+
+	thermal-zones {
+		Tboard_tegra {
+			status = "disabled";
+		};
+
+		Tdiode_tegra {
+			status = "disabled";
+		};
+	};
+
+	i2c@7000c000 {
+		status = "okay";
+		tegra_nct72: temp-sensor@4c {
+			status = "disabled";
+		};
+	};
+
+};
