@@ -26,6 +26,8 @@
 		status = "okay";
 		pwms = <&tegra_pwm 3 65536>;
 		shared_data = <&pwm_fan_shared_data>;
+		fan_startup_pwm = <19700>; /* For DVT SIF, 30% of max pwm */
+		fan_startup_time = <5000>;
 		profiles {
 			default = "quiet";
 			quiet {
