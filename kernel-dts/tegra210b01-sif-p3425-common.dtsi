@@ -469,6 +469,11 @@
 		};
 		dpaux1 {
 			status = "okay";
+			prod-settings {
+				prod_c_dpaux_hdmi {
+					prod = <0x00000124 0x00010000 0x00010000>;
+				};
+			};
 		};
 		vi {
 			status = "okay";
