@@ -926,12 +926,12 @@
 			};
 			CC_TW {
 				iso_abbrev = "TW";
-				custom_locale = "TW";
+				custom_locale = "US";
 				custom_locale_rev = <0>;
 			};
 			CC_SG {
 				iso_abbrev = "SG";
-				custom_locale = "US";
+				custom_locale = "DE";
 				custom_locale_rev = <0>;
 			};
 			CC_HK {
