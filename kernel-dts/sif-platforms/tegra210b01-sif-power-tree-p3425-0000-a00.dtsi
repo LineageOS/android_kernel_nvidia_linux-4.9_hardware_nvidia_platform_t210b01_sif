@@ -70,6 +70,7 @@
 					regulator-disable-ramp-delay = <145800>;
 					regulator-ramp-delay = <27500>;
 					regulator-ramp-delay-scale = <300>;
+					regulator-initial-mode = <REGULATOR_MODE_FAST>;
 				};
 
 				sd2 {
