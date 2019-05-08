@@ -37,7 +37,7 @@
 				pin_gpio3 {
 					maxim,active-fps-source = <MAX77620_FPS_SRC_0>;
 					maxim,active-fps-power-up-slot = <4>;
-					maxim,active-fps-power-down-slot = <4>;
+					maxim,active-fps-power-down-slot = <3>;
 				};
 			};
 
@@ -50,7 +50,7 @@
 					regulator-name = "vdd-core";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_1>;
 					maxim,active-fps-power-up-slot = <1>;
-					maxim,active-fps-power-down-slot = <7>;
+					maxim,active-fps-power-down-slot = <6>;
 					regulator-min-microvolt = <850000>;
 					regulator-max-microvolt = <850000>;
 					regulator-enable-ramp-delay = <146>;
