@@ -150,6 +150,7 @@
 		stdout-path = &uarta;
 		nvidia,tegra-darcy-sku;
 		nvidia,tegra-sif-sku;
+		no-audio-over-usb;
 		no-tnid-sn;
 		nvidia,bootloader-xusb-enable;
 		nvidia,bootloader-vbus-enable=<0x1>;
