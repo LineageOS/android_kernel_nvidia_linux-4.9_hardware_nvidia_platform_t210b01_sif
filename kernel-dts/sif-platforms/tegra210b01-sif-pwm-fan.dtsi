@@ -15,29 +15,29 @@
 
 / {
 	pwm_fan_shared_data: pfsd {
-		active_rru = <10240 512 256 256 256 256 256 256 256 256>;
-		active_rrd = <10240 512 256 256 256 256 256 256 256 256>;
-		pwm_period = <65536>;
-		active_pwm_max = <65536>;
+		active_rru = <5858 283 146 146 146 146 146 146 146 146>;
+		active_rrd = <5858 283 146 146 146 146 146 146 146 146>;
+		pwm_period = <37488>;
+		active_pwm_max = <37488>;
 	};
 
 	pwm-fan {
 		compatible = "pwm-fan";
 		status = "okay";
-		pwms = <&tegra_pwm 3 65536>;
+		pwms = <&tegra_pwm 3 37488>;
 		shared_data = <&pwm_fan_shared_data>;
-		fan_startup_pwm = <19700>; /* For DVT SIF, 30% of max pwm */
+		fan_startup_pwm = <11269>; /* For DVT SIF, 30% of max pwm */
 		fan_startup_time = <5000>;
 		continuous_gov_boot_on;
 		profiles {
 			default = "quiet";
 			quiet {
 				state_cap = <4>;
-				active_pwm = <0 13100 13100 22000 65535 65535 65535 65535 65535 65535>;
+				active_pwm = <0 7493 7493 12584 37487 37487 37487 37487 37487 37487>;
 			};
 			cool {
 				state_cap = <4>;
-				active_pwm = <0 13100 13100 22000 65535 65535 65535 65535 65535 65535>;
+				active_pwm = <0 7493 7493 12584 37487 37487 37487 37487 37487 37487>;
 			};
 		};
 	};
