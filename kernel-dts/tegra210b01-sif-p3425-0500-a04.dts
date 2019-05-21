@@ -71,6 +71,15 @@
 	};
 
 	regulators {
+		vdd_hdmi_standby: regulator@5 {
+			compatible = "regulator-fixed-sync";
+			reg = <5>;
+			regulator-name = "vdd-hdmi-standby";
+			regulator-min-microvolt = <1800000>;
+			regulator-max-microvolt = <1800000>;
+			gpio = <&gpio TEGRA_GPIO(A, 5) 0>;
+			enable-active-high;
+		};
 		vdd_fan: regulator@6 {
 			compatible = "regulator-fixed-sync";
 			reg = <6>;
