@@ -283,6 +283,7 @@
 			usb2-0 {
 				status = "okay";
 				mode = "otg";
+				nvidia,usb3-port-fake = <0>;
 			};
 		};
 	};
