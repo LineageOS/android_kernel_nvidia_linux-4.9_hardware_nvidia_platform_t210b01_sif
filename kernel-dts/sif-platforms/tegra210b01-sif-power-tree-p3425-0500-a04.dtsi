@@ -376,22 +376,22 @@
 			compatible = "pwm-regulator";
 			pwms = <&tegra_pwm_dfll 0 2500>;
 			regulator-name = "vdd-cpu";
-			regulator-min-microvolt = <614000>;
+			regulator-min-microvolt = <621000>;
 			regulator-max-microvolt = <1120000>;
-			regulator-settling-time-us = <119>;
+			regulator-settling-time-us = <122>;
 			regulator-always-on;
 			voltage-table =
-				<614000 0>, <629813 1>, <645625 2>,
-				<661438 3>, <677250 4>, <693063 5>,
-				<708875 6>, <724688 7>, <740500 8>,
-				<756313 9>, <772125 10>, <787938 11>,
-				<803750 12>, <819563 13>, <835375 14>,
-				<851188 15>, <867000 16>, <882813 17>,
-				<898625 18>, <914438 19>, <930250 20>,
-				<946063 21>, <961875 22>, <977688 23>,
-				<993500 24>, <1009313 25>, <1025125 26>,
-				<1040938 27>, <1056750 28>, <1072563 29>,
-				<1088375 30>, <1104188 31>, <1120000 32>;
+				<621000 0>, <636594 1>, <652188 2>,
+				<667781 3>, <683375 4>, <698969 5>,
+				<714563 6>, <730156 7>, <745750 8>,
+				<761344 9>, <776938 10>, <792531 11>,
+				<808125 12>, <823719 13>, <839313 14>,
+				<854906 15>, <870500 16>, <886094 17>,
+				<901688 18>, <917281 19>, <932875 20>,
+				<948469 21>, <964063 22>, <979656 23>,
+				<995250 24>, <1010844 25>, <1026438 26>,
+				<1042031 27>, <1057625 28>, <1073219 29>,
+				<1088813 30>, <1104406 31>, <1120000 32>;
 		};
 
 		gpu_ovr_reg: pwm-regulator@1 {
@@ -400,13 +400,13 @@
 			compatible = "pwm-regulator";
 			pwms = <&tegra_pwm 1 8000>;
 			regulator-name = "vdd-gpu";
-			regulator-min-microvolt = <614000>;
+			regulator-min-microvolt = <621000>;
 			regulator-max-microvolt = <1120000>;
 			regulator-init-microvolt = <821000>;
 			regulator-n-voltages = <124>;
 			regulator-enable-ramp-delay = <2000>;
 			enable-gpio = <&max77620 6 0>;
-			regulator-settling-time-us = <119>;
+			regulator-settling-time-us = <122>;
 		};
 	};
 };
