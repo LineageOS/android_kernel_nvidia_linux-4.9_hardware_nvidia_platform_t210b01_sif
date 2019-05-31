@@ -908,12 +908,12 @@
 			};
 			CC_CN {
 				iso_abbrev = "CN";
-				custom_locale = "CN";
+				custom_locale = "XV";
 				custom_locale_rev = <0>;
 			};
 			CC_IN {
 				iso_abbrev = "IN";
-				custom_locale = "IN";
+				custom_locale = "XV";
 				custom_locale_rev = <0>;
 			};
 			CC_JP {
