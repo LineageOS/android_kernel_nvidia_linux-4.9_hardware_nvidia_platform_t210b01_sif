@@ -239,7 +239,7 @@
 			avdd_hdmi-supply = <&max77620_ldo3>;
 			avdd_hdmi_pll-supply = <&max77620_sd3>;
 			vdd_hdmi_5v0-supply = <&vdd_hdmi>;
-			avdd_hdmi_standby-supply = <&vdd_hdmi_standby>;
+			avdd_hdmi_tmds_clk_data-supply = <&vdd_hdmi_standby>;
 		};
 	};
 
