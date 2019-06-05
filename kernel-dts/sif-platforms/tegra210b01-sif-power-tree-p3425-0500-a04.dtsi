@@ -57,12 +57,12 @@
 				};
 
 				sd1 {
-					regulator-name = "vdd-ddr-1v15";
+					regulator-name = "vdd-ddr-1v125";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_0>;
 					maxim,active-fps-power-up-slot = <5>;
 					maxim,active-fps-power-down-slot = <2>;
-					regulator-min-microvolt = <1150000>;
-					regulator-max-microvolt = <1150000>;
+					regulator-min-microvolt = <1125000>;
+					regulator-max-microvolt = <1125000>;
 					regulator-enable-ramp-delay = <130>;
 					regulator-disable-ramp-delay = <145800>;
 					regulator-ramp-delay = <27500>;
