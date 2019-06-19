@@ -28,7 +28,7 @@
 #include "foster-platforms/tegra210-pinmux-drive-sdmmc-common.dtsi"
 #include "foster-platforms/tegra210-loki-e-comms.dtsi"
 #include "sif-platforms/tegra210b01-sif-pwm-fan.dtsi"
-#include "foster-platforms/tegra210-darcy-prods.dtsi"
+#include "sif-platforms/tegra210b01-sif-prods.dtsi"
 #include <t210-common-platforms/tegra210-ers-hdmi-e2190-1100-a00.dtsi>
 #include "sif-platforms/tegra210b01-sif-thermal-fan-est.dtsi"
 #include "foster-platforms/tegra210-loki-e-keys-p2530-0032-e00.dtsi"
