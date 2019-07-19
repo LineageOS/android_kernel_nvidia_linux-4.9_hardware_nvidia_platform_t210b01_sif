@@ -907,16 +907,6 @@
 				custom_locale = "AU";
 				custom_locale_rev = <0>;
 			};
-			CC_CN {
-				iso_abbrev = "CN";
-				custom_locale = "XV";
-				custom_locale_rev = <0>;
-			};
-			CC_IN {
-				iso_abbrev = "IN";
-				custom_locale = "XV";
-				custom_locale_rev = <0>;
-			};
 			CC_JP {
 				iso_abbrev = "JP";
 				custom_locale = "JP";
