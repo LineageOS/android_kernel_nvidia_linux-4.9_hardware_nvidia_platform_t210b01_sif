@@ -152,7 +152,7 @@
 	};
 
 	chosen {
-		bootargs = "earlycon=uart8250,mmio32,0x70006000,androidboot.secureos=tlk";
+		bootargs = "earlycon=uart8250,mmio32,0x70006000,androidboot.secureos=tlk strict_cma=on";
 		stdout-path = &uarta;
 		nvidia,tegra-darcy-sku;
 		nvidia,tegra-sif-sku;
