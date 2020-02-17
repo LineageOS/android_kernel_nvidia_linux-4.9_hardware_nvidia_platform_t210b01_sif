@@ -25,12 +25,25 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 
+		battery_reg: regulator@0 {
+			compatible = "regulator-fixed";
+			reg = <0>;
+			regulator-name = "vdd-ac-bat";
+			regulator-min-microvolt = <5000000>;
+			regulator-max-microvolt = <5000000>;
+			regulator-enable-ramp-delay = <160>;
+			regulator-disable-ramp-delay = <10000>;
+			regulator-always-on;
+		};
+
 		vdd_5v0_sys: regulator@1 { /* DC 5V INPUT */
-			compatible = "regulator-fixed-sync";
+			compatible = "regulator-fixed";
 			reg = <1>;
 			regulator-name = "vdd-5v0-sys";
 			regulator-min-microvolt = <5000000>;
 			regulator-max-microvolt = <5000000>;
+			regulator-enable-ramp-delay = <160>;
+			regulator-disable-ramp-delay = <10000>;
 		};
 
 		vdd_3v3_sys: regulator@2 {
@@ -39,6 +52,8 @@
 			regulator-name = "vdd-3v3-sys";
 			regulator-min-microvolt = <3300000>;
 			regulator-max-microvolt = <3300000>;
+			regulator-enable-ramp-delay = <240>;
+			regulator-disable-ramp-delay = <11340>;
 			regulator-always-on;
 			gpio = <&max77620 3 0>;
 			enable-active-high;
@@ -60,6 +75,8 @@
 			regulator-name = "vdd-hdmi";
 			regulator-min-microvolt = <5000000>;
 			regulator-max-microvolt = <5000000>;
+			regulator-enable-ramp-delay = <468>;
+			regulator-disable-ramp-delay = <13000>;
 			gpio = <&gpio TEGRA_GPIO(CC, 7) 0>;
 			enable-active-high;
 		};

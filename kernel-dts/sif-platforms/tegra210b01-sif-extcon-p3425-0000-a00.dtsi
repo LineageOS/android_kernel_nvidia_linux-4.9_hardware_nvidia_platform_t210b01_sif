@@ -30,6 +30,22 @@
 			nvidia,pmc-wakeup = <&tegra_pmc
 				PMC_WAKE_TYPE_GPIO 34 PMC_TRIGGER_TYPE_NONE>;
 		};
+
+		extcon_acadptr: extcon@2 {
+			compatible = "extcon-gpio-states";
+			reg = <0x2>;
+			extcon-gpio,name = "ACADPTR";
+			extcon-gpio,out-cable-names = <EXTCON_AC_ADAPTOR EXTCON_NONE>;
+			cable-connected-on-boot = <0>;
+			#extcon-cells = <1>;
+		};
+	};
+
+	psy_extcon_ac_adaptor {
+		compatible = "power-supply-extcon";
+		extcon-cables = <&extcon_acadptr 0>;
+		extcon-cable-names = "ac-adaptor";
+		status = "okay";
 	};
 
 	xusb@70090000 {

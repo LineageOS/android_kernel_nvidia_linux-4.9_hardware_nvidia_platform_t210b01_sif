@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2019, NVIDIA CORPORATION.  All rights reserved.
+ * Copyright (c) 2019, NVIDIA CORPORATION.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -376,22 +376,22 @@
 			compatible = "pwm-regulator";
 			pwms = <&tegra_pwm_dfll 0 2500>;
 			regulator-name = "vdd-cpu";
-			regulator-min-microvolt = <500000>;
-			regulator-max-microvolt = <1120000>;
+			regulator-min-microvolt = <620000>;
+			regulator-max-microvolt = <1050000>;
 			regulator-settling-time-us = <106>;
 			regulator-always-on;
 			voltage-table =
-				<500000 0>, <519375 1>, <538750 2>,
-				<558125 3>, <577500 4>, <596875 5>,
-				<616250 6>, <635625 7>, <655000 8>,
-				<674375 9>, <693750 10>, <713125 11>,
-				<732500 12>, <751875 13>, <771250 14>,
-				<790625 15>, <810000 16>, <829375 17>,
-				<848750 18>, <868125 19>, <887500 20>,
-				<906875 21>, <926250 22>, <945625 23>,
-				<965000 24>, <984375 25>, <1003750 26>,
-				<1023125 27>, <1042500 28>, <1061875 29>,
-				<1081250 30>, <1100625 31>, <1120000 32>;
+				<620000 0>, <633437 1>, <646875 2>,
+				<660312 3>, <673750 4>, <687187 5>,
+				<700625 6>, <714062 7>, <727500 8>,
+				<740937 9>, <754375 10>, <767812 11>,
+				<781250 12>, <794687 13>, <808125 14>,
+				<821562 15>, <835000 16>, <848437 17>,
+				<861875 18>, <875312 19>, <888750 20>,
+				<902187 21>, <915625 22>, <929062 23>,
+				<942500 24>, <955937 25>, <969375 26>,
+				<982812 27>, <996250 28>, <1009687 29>,
+				<1023125 30>, <1036562 31>, <1050000 32>;
 		};
 
 		gpu_ovr_reg: pwm-regulator@1 {
@@ -400,8 +400,8 @@
 			compatible = "pwm-regulator";
 			pwms = <&tegra_pwm 1 8000>;
 			regulator-name = "vdd-gpu";
-			regulator-min-microvolt = <500000>;
-			regulator-max-microvolt = <1120000>;
+			regulator-min-microvolt = <620000>;
+			regulator-max-microvolt = <1050000>;
 			regulator-init-microvolt = <800000>;
 			regulator-n-voltages = <124>;
 			regulator-enable-ramp-delay = <2000>;
@@ -409,5 +409,4 @@
 			regulator-settling-time-us = <106>;
 		};
 	};
-
 };

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018-2019, NVIDIA CORPORATION.  All rights reserved.
+ * Copyright (c) 2019, NVIDIA CORPORATION.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -58,12 +58,12 @@
 				};
 
 				sd1 {
-					regulator-name = "vdd-ddr-1v15";
+					regulator-name = "vdd-ddr-1v125";
 					maxim,active-fps-source = <MAX77620_FPS_SRC_0>;
 					maxim,active-fps-power-up-slot = <5>;
 					maxim,active-fps-power-down-slot = <2>;
-					regulator-min-microvolt = <1150000>;
-					regulator-max-microvolt = <1150000>;
+					regulator-min-microvolt = <1125000>;
+					regulator-max-microvolt = <1125000>;
 					regulator-enable-ramp-delay = <130>;
 					regulator-disable-ramp-delay = <145800>;
 					regulator-ramp-delay = <27500>;
@@ -240,6 +240,7 @@
 			avdd_hdmi-supply = <&max77620_ldo3>;
 			avdd_hdmi_pll-supply = <&max77620_sd3>;
 			vdd_hdmi_5v0-supply = <&vdd_hdmi>;
+			avdd_hdmi_tmds_clk_data-supply = <&vdd_hdmi_standby>;
 		};
 	};
 
@@ -376,22 +377,22 @@
 			compatible = "pwm-regulator";
 			pwms = <&tegra_pwm_dfll 0 2500>;
 			regulator-name = "vdd-cpu";
-			regulator-min-microvolt = <500000>;
+			regulator-min-microvolt = <621000>;
 			regulator-max-microvolt = <1120000>;
-			regulator-settling-time-us = <106>;
+			regulator-settling-time-us = <122>;
 			regulator-always-on;
 			voltage-table =
-				<500000 0>, <519375 1>, <538750 2>,
-				<558125 3>, <577500 4>, <596875 5>,
-				<616250 6>, <635625 7>, <655000 8>,
-				<674375 9>, <693750 10>, <713125 11>,
-				<732500 12>, <751875 13>, <771250 14>,
-				<790625 15>, <810000 16>, <829375 17>,
-				<848750 18>, <868125 19>, <887500 20>,
-				<906875 21>, <926250 22>, <945625 23>,
-				<965000 24>, <984375 25>, <1003750 26>,
-				<1023125 27>, <1042500 28>, <1061875 29>,
-				<1081250 30>, <1100625 31>, <1120000 32>;
+				<621000 0>, <636594 1>, <652188 2>,
+				<667781 3>, <683375 4>, <698969 5>,
+				<714563 6>, <730156 7>, <745750 8>,
+				<761344 9>, <776938 10>, <792531 11>,
+				<808125 12>, <823719 13>, <839313 14>,
+				<854906 15>, <870500 16>, <886094 17>,
+				<901688 18>, <917281 19>, <932875 20>,
+				<948469 21>, <964063 22>, <979656 23>,
+				<995250 24>, <1010844 25>, <1026438 26>,
+				<1042031 27>, <1057625 28>, <1073219 29>,
+				<1088813 30>, <1104406 31>, <1120000 32>;
 		};
 
 		gpu_ovr_reg: pwm-regulator@1 {
@@ -400,14 +401,13 @@
 			compatible = "pwm-regulator";
 			pwms = <&tegra_pwm 1 8000>;
 			regulator-name = "vdd-gpu";
-			regulator-min-microvolt = <500000>;
+			regulator-min-microvolt = <621000>;
 			regulator-max-microvolt = <1120000>;
-			regulator-init-microvolt = <800000>;
+			regulator-init-microvolt = <821000>;
 			regulator-n-voltages = <124>;
 			regulator-enable-ramp-delay = <2000>;
 			enable-gpio = <&max77620 6 0>;
-			regulator-settling-time-us = <106>;
+			regulator-settling-time-us = <122>;
 		};
 	};
-
 };
